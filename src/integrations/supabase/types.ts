@@ -14,7 +14,123 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      call_logs: {
+        Row: {
+          call_duration: number | null
+          call_time: string
+          caller_name: string | null
+          caller_number: string
+          caller_type: string | null
+          created_at: string
+          id: string
+          is_blocked: boolean | null
+          is_spam: boolean | null
+          location: Json | null
+          user_id: string
+        }
+        Insert: {
+          call_duration?: number | null
+          call_time?: string
+          caller_name?: string | null
+          caller_number: string
+          caller_type?: string | null
+          created_at?: string
+          id?: string
+          is_blocked?: boolean | null
+          is_spam?: boolean | null
+          location?: Json | null
+          user_id: string
+        }
+        Update: {
+          call_duration?: number | null
+          call_time?: string
+          caller_name?: string | null
+          caller_number?: string
+          caller_type?: string | null
+          created_at?: string
+          id?: string
+          is_blocked?: boolean | null
+          is_spam?: boolean | null
+          location?: Json | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      otp_logs: {
+        Row: {
+          created_at: string
+          id: string
+          is_suspicious: boolean | null
+          location: Json | null
+          message_content: string
+          otp_code: string
+          purpose: string | null
+          received_at: string
+          risk_level: string | null
+          sender_name: string | null
+          sender_number: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          is_suspicious?: boolean | null
+          location?: Json | null
+          message_content: string
+          otp_code: string
+          purpose?: string | null
+          received_at?: string
+          risk_level?: string | null
+          sender_name?: string | null
+          sender_number: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          is_suspicious?: boolean | null
+          location?: Json | null
+          message_content?: string
+          otp_code?: string
+          purpose?: string | null
+          received_at?: string
+          risk_level?: string | null
+          sender_name?: string | null
+          sender_number?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          full_name: string | null
+          id: string
+          is_verified: boolean | null
+          phone_number: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          is_verified?: boolean | null
+          phone_number: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          is_verified?: boolean | null
+          phone_number?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
